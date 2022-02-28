@@ -1,12 +1,13 @@
 #!/usr/bin/node
-// computes and prints a factorial
 
-function factorial (n) {
-  if ((isNaN(n)) || (n === 1)) {
-    return 1;
+function factorial (a) {
+  if (a > 0) {
+    return a * factorial(a - 1);
   } else {
-    return n * factorial(n - 1);
+    return 1;
   }
 }
 
-console.log(factorial(parseInt(process.argv[2])));
+const a = parseInt(process.argv[2]);
+const result = factorial(a);
+console.log(result);
